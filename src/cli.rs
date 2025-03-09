@@ -10,7 +10,10 @@ pub struct Cli {
 #[derive(Subcommand)]
 pub enum Commands {
     #[command(about="Scan a file")]
-    Scan(Scan)
+    Scan(Scan),
+
+    #[command(about="Prompt your codes")]
+    Prompt
 }
 
 #[derive(Args, Debug)]
