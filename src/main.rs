@@ -1,18 +1,6 @@
-use clap::{CommandFactory, Parser};
-use runix::{Cli, Commands};
+use cli::run_cli;
 
 fn main() {
-   let args = Cli::parse();
-
-   match &args.command {
-    Some(Commands::Scan(arg)) => {
-        println!("{:?}", arg.file);
-    },
-    Some(Commands::Prompt) => {
-        println!("Running prompt !!!");
-    },
-    None => {
-        Cli::command().print_help().unwrap();
-    }
-   }
+    let cli = cli::new();
+    run_cli(cli);
 }
